@@ -1,4 +1,4 @@
-from pynput import mouse
+from pynput import mouse, keyboard
 
 
 class Mouse:
@@ -20,3 +20,14 @@ class Mouse:
 
     def click(self, click_button, clicks_number):
         self.controller.click(self.button[click_button], clicks_number)
+
+
+class Keyboard:
+    """
+    Class for keyboard control
+    """
+    def __init__(self):
+        self.controller = keyboard.Controller()
+
+    def type(self, text):
+        self.controller.type(text)
