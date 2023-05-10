@@ -14,3 +14,7 @@ event_mapper = {
     "wait": lambda a, b: time.sleep(b),
     "tap_key": keyboard_device.tap_key
 }
+
+with open("config_file.json") as file:
+    data = json.load(file)
+    print(data)
