@@ -1,0 +1,22 @@
+{
+  "steps":
+  [
+    {
+      "event": "move_mouse_to_position",
+      "payload": {"pos_x": 70, "pos_y": 700}
+    },
+    {
+      "event": "click_mouse",
+      "payload": {"button":"left", "number_of_clicks": 1}
+    },
+    {
+      "event": "wait",
+      "payload": {"time_to_wait": 0.5}
+    },
+    {
+      "event": "type",
+      "payload": {"typing": "xyz"}
+    }
+
+  ]
+}
