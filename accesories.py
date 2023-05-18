@@ -29,5 +29,11 @@ class Keyboard:
     def __init__(self):
         self.controller = keyboard.Controller()
 
-    def type(self, text):
-        self.controller.type(text)
+    def type(self, text: dict):
+        self.controller.type(text["typing"])
+
+    def tap_key(self, key: dict):
+        # ToDo: think how to define enter key
+        key_to_tap = keyboard.Key[key["key"]]
+        self.controller.tap(key_to_tap)
+
