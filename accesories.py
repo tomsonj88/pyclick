@@ -18,8 +18,10 @@ class Mouse:
         position = (coordinates["pos_x"], coordinates["pos_y"])
         self.controller.position = position
 
-    def click(self, click_button, clicks_number):
-        self.controller.click(self.button[click_button], clicks_number)
+    def click(self, data: dict):
+        self.controller.click(mouse.Button[data["button"]],
+                              data["number_of_clicks"]
+                              )
 
 
 class Keyboard:
