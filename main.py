@@ -6,7 +6,7 @@ import time
 from accesories import Mouse, Keyboard
 
 
-def wait(delay:dict):
+def wait(delay: dict):
     time.sleep(delay["time_to_wait"])
 
 
@@ -22,4 +22,10 @@ event_mapper = {
 
 with open("config_file.json") as file:
     data = json.load(file)
-    print(data)
+
+    for step in data["steps"]:
+        event = step["event"]
+        print(f"event: {step['event']}")
+        print(f"payload: {step['payload']}\n")
+        function = event_mapper[event]
+        function(step["payload"])
