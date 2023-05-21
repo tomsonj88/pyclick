@@ -1,5 +1,6 @@
 from pynput import keyboard, mouse
 from enum import Enum
+from dotenv import load_dotenv
 import json
 import time
 
@@ -10,6 +11,7 @@ def wait(delay: dict):
     time.sleep(delay["time_to_wait"])
 
 
+load_dotenv()
 mouse_device = Mouse()
 keyboard_device = Keyboard()
 event_mapper = {
@@ -17,7 +19,8 @@ event_mapper = {
     "click_mouse": mouse_device.click,
     "type": keyboard_device.type,
     "wait": wait,
-    "tap_key": keyboard_device.tap_key
+    "tap_key": keyboard_device.tap_key,
+    "type_from_env_variable": keyboard_device.type_text_from_env_variables
 }
 
 with open("config_file.json") as file:

@@ -1,3 +1,5 @@
+from os import getenv
+
 from pynput import mouse, keyboard
 
 
@@ -38,4 +40,9 @@ class Keyboard:
         # ToDo: think how to define enter key
         key_to_tap = keyboard.Key[key["key"]]
         self.controller.tap(key_to_tap)
+
+    def type_text_from_env_variables(self, text: dict):
+        env_variable = getenv(text["take_from_env_var"])
+        self.controller.type(env_variable)
+
 
