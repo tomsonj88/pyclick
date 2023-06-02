@@ -1,6 +1,7 @@
 from os import getenv
 
 from pynput import mouse, keyboard
+from pyperclip import paste
 
 
 class Mouse:
@@ -44,5 +45,8 @@ class Keyboard:
     def type_text_from_env_variables(self, text: dict):
         env_variable = getenv(text["take_from_env_var"])
         self.controller.type(env_variable)
+
+    def type_paste(self, text: dict):
+        self.controller.type(paste())
 
 

@@ -20,7 +20,8 @@ event_mapper = {
     "type": keyboard_device.type,
     "wait": wait,
     "tap_key": keyboard_device.tap_key,
-    "type_from_env_variable": keyboard_device.type_text_from_env_variables
+    "type_from_env_variable": keyboard_device.type_text_from_env_variables,
+    "paste": keyboard_device.type_paste
 }
 
 with open("config_file.json") as file:
