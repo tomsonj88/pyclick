@@ -1,35 +1,53 @@
-from pynput import keyboard, mouse
-from enum import Enum
-from dotenv import load_dotenv
+"""
+PyClick - automated login to VPN
+"""
+
 import json
+import logging
 import time
+
+from dotenv import load_dotenv
 
 from accesories import Mouse, Keyboard
 
+logging.basicConfig(format='%(asctime)s %(name)s %(levelname)s %(message)s',
+                    level=logging.INFO
+                    )
 
-def wait(delay: dict):
-    time.sleep(delay["time_to_wait"])
+
+def wait(delay: float):
+    """
+    Method used for waiting number of seconds specified in parameters
+    """
+    time.sleep(delay)
 
 
-load_dotenv()
-mouse_device = Mouse()
-keyboard_device = Keyboard()
-event_mapper = {
-    "move_mouse_to_position": mouse_device.move_to_position,
-    "click_mouse": mouse_device.click,
-    "type": keyboard_device.type,
-    "wait": wait,
-    "tap_key": keyboard_device.tap_key,
-    "type_from_env_variable": keyboard_device.type_text_from_env_variables,
-    "paste": keyboard_device.type_paste
-}
+def main():
+    """
+    Main function
+    """
+    load_dotenv()
+    mouse_device = Mouse()
+    keyboard_device = Keyboard()
+    event_mapper = {
+        "move mouse to position": mouse_device.move_to_position,
+        "click mouse": mouse_device.click,
+        "type": keyboard_device.type,
+        "wait": wait,
+        "tap key": keyboard_device.tap_key,
+        "type from env variable": keyboard_device.type_text_from_env_variables,
+        "paste": keyboard_device.type_paste
+    }
 
-with open("config_file.json") as file:
-    data = json.load(file)
+    with open("actions.json", encoding="utf8") as file:
+        data = json.load(file)["steps"]
 
-    for step in data["steps"]:
-        event = step["event"]
-        print(f"event: {step['event']}")
-        print(f"payload: {step['payload']}\n")
-        function = event_mapper[event]
-        function(step["payload"])
+    for step in data:
+        for key, value in step.items():
+            function = event_mapper[key]
+            function(**value)
+        logging.info(step)
+
+
+if __name__ == '__main__':
+    main()

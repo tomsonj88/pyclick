@@ -1,0 +1,222 @@
+{
+  "steps":
+  [
+    {
+      "tap key":
+      {
+        "key": "cmd_l"
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 0.5
+      }
+    },
+    {
+      "type":
+      {
+        "text": "winauth"
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 2
+      }
+    },
+    {
+      "move mouse to position":
+      {
+        "pos_x": 615,
+        "pos_y": 180
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 2
+      }
+    },
+    {
+      "click mouse":
+      {
+        "button": "left",
+        "number_of_clicks":  1
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 4
+      }
+    },
+    {
+      "type from env variable":
+      {
+        "take_from_env_var": "CODE"
+      }
+    },
+    {
+      "tap key":
+      {
+        "key": "enter"
+      }
+    },
+    {
+      "move mouse to position":
+      {
+        "pos_x": 820,
+        "pos_y": 365
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 1
+      }
+    },
+    {
+      "click mouse":
+      {
+        "button": "right",
+        "number_of_clicks":  1
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 0.5
+      }
+    },
+    {
+      "move mouse to position":
+      {
+        "pos_x": 840,
+        "pos_y": 365
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 0.5
+      }
+    },
+    {
+      "click mouse":
+      {
+        "button": "left",
+        "number_of_clicks":  1
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 0.5
+      }
+    },
+    {
+      "tap key":
+      {
+        "key": "cmd_l"
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 0.5
+      }
+    },
+    {
+      "type":
+      {
+        "text": "cisco anyconnect"
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 0.5
+      }
+    },
+    {
+      "move mouse to position":
+      {
+        "pos_x": 615,
+        "pos_y": 180
+      }
+    },
+    {
+      "click mouse":
+      {
+        "button": "left",
+        "number_of_clicks":  1
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 3
+      }
+    },
+    {
+      "tap key":
+      {
+        "key": "enter"
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 7
+      }
+    },
+    {
+      "type from env variable":
+      {
+        "take_from_env_var": "PASSCODE"
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 1
+      }
+    },
+    {
+      "tap key":
+      {
+        "key": "enter"
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 2
+      }
+    },
+    {
+      "paste":
+      {
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 1
+      }
+    },
+    {
+      "tap key":
+      {
+        "key": "enter"
+      }
+    },
+    {
+      "wait":
+      {
+        "delay": 1
+      }
+    }
+  ]
+}
